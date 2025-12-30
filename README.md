@@ -46,26 +46,26 @@ The professional prompt is an **intermediate process inside the system**, not so
 
 For security reasons, **API keys are NOT included** in this repository.
 
-### Get ElevenLabs API Key
+### 🔑 Get ElevenLabs API Key
 1. Sign up at https://elevenlabs.io  
 2. Go to **Profile → API Keys**
 3. Create a new API key  
 
-### Set Environment Variable
+### ⚙️Set Environment Variable
 
-#### Windows (PowerShell)
+#### 🪟 ** Windows (PowerShell)**
 **Poweshell**
 **setx ELEVENLABS_API_KEY "your_api_key_here"**  
 
-### **macOS / Linux**
+### 🐧**macOS / Linux**
 
 **export ELEVENLABS_API_KEY="your_api_key_here"**  
 
-**Restart the terminal after setting the key.**  
+** 🔁Restart the terminal after setting the key.**  
 
-**Run the code :**  
+** ▶️ Run the code :**  
 **pip install fastapi uvicorn langdetect deep-translator elevenlabs python-multipart**  
 **uvicorn promptpilot_all_in_one:app --reload**  
 
-**Open in browser:**  
+** 🌐 Open in browser:**  
 **http://127.0.0.1:8000**
