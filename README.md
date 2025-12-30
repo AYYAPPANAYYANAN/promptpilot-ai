@@ -61,11 +61,11 @@ For security reasons, **API keys are NOT included** in this repository.
 
 **export ELEVENLABS_API_KEY="your_api_key_here"**  
 
-** 🔁Restart the terminal after setting the key.**  
+1. 🔁Restart the terminal after setting the key.  
 
-** ▶️ Run the code :**  
+2. ▶️ Run the code :
 **pip install fastapi uvicorn langdetect deep-translator elevenlabs python-multipart**  
 **uvicorn promptpilot_all_in_one:app --reload**  
 
-** 🌐 Open in browser:**  
+3. 🌐 Open in browser:
 **http://127.0.0.1:8000**
