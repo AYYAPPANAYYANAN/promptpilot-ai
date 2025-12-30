@@ -53,11 +53,11 @@ For security reasons, **API keys are NOT included** in this repository.
 
 ### ⚙️Set Environment Variable
 
-#### 🪟 ** Windows (PowerShell)**
+#### 🪟  Windows (PowerShell)
 **Poweshell**
 **setx ELEVENLABS_API_KEY "your_api_key_here"**  
 
-### 🐧**macOS / Linux**
+### 🐧macOS / Linux
 
 **export ELEVENLABS_API_KEY="your_api_key_here"**  
 
