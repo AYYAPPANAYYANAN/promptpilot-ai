@@ -1,147 +1,68 @@
-# PromptPilot AI
+# 🚀 PromptPilot AI
+> **The AI Orchestration Layer.** Don't learn to prompt. Just pilot.
 
-PromptPilot AI is a human-first AI interaction system that automatically converts casual human intent into professional AI execution, without requiring users to write prompts.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi)
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-1.5%20Pro-4285F4?style=for-the-badge&logo=google)
+![ElevenLabs](https://img.shields.io/badge/ElevenLabs-Turbo%20V2-000000?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Hackathon%20Ready-success?style=for-the-badge)
 
----
-
-## 1. How to Run PromptPilot AI
-
-This section explains exactly how to install, configure, and run the project.
-
----
-
-### 1.1 Prerequisites
-
-- Python 3.10 or higher
-- Internet connection (for language model and voice services)
-- Optional GPU (recommended for faster image generation, but not required)
-
-PromptPilot AI runs on:
-- Windows
-- macOS
-- Linux
+PromptPilot AI is a **human-first AI interaction system** that automatically converts casual human intent into professional, optimized AI prompts. Users never need to learn "prompt engineering"—the system handles the complexity internally, delivering high-precision text, voice, and image outputs.
 
 ---
 
-### 1.2 Install Dependencies
+## ✨ Key Features
 
-Run the following commands in your terminal:
+### 🧠 1. The Interpretation Layer (The Brain)
+Most users don't know how to talk to LLMs. PromptPilot sits between the user and the AI.
+* **Casual Input:** "Help me study physics."
+* **PromptPilot Core:** Detects user persona (e.g., Student), rewrites the request into a structured pedagogical prompt with learning objectives and tone guidelines.
+* **Execution:** Sends the *perfect* prompt to Google Gemini for the best possible result.
 
-bash
-pip install fastapi uvicorn langdetect groq elevenlabs python-multipart
-pip install diffusers torch accelerate safetensors pillow pypdf python-docx
+### 🗣️ 2. Native Multilingual Voice (ElevenLabs)
+* **Talk to it:** Integrated microphone support for hands-free interaction.
+* **It talks back:** Uses **ElevenLabs Turbo V2** for ultra-low latency, realistic voice synthesis.
+* **80+ Languages:** Speak in Hindi, Spanish, French, or Tamil—PromptPilot detects the language and responds fluently with the correct accent.
 
-1.3 API Key Setup (Required)
-For security reasons, API keys are not included in the source code and must be provided via environment variables.
-Windows (PowerShell)
-setx GROQ_API_KEY "your_groq_api_key_here"
-setx ELEVENLABS_API_KEY "your_elevenlabs_api_key_here"
+### 🎨 3. Gen Z / Modern UI
+* **Glassmorphism Design:** A beautiful, dark-mode interface with neon accents and blur effects.
+* **Adaptive Persona:** The UI asks "Who are you?" (Kid, Student, Pro) and the AI changes its entire explaining style to match.
+* **Markdown Rendering:** Beautifully formatted responses with bolding, lists, and headers (powered by `marked.js`).
+* **Prompt Transparency:** Curious how it works? Click the "✨ View Backend Prompt" button on any message to see exactly what the AI sent to the model.
 
-After setting the keys:
-Close PowerShell completely
-Open a new terminal session
+### 🖼️ 4. Multi-Modal Generation
+* **Image Generation:** Integrated `Stable Diffusion` pipeline. Just toggle the Image icon, describe what you want, and generate art locally (or via CPU fallback).
+* **Document Context:** Upload `.pdf` or `.docx` files. The system reads them instantly and lets you chat with your documents.
 
-macOS / Linux
-export GROQ_API_KEY="your_groq_api_key_here"
-export ELEVENLABS_API_KEY="your_elevenlabs_api_key_here"
+### ⚡ 5. Failsafe Architecture
+* **Smart Model Selector:** Automatically scans your Google API key permissions to find the best available model (Gemini 1.5 Pro, Flash, or 1.0), preventing "404 Model Not Found" errors.
 
-1.4 Run the Application
-uvicorn promptpilot_ai:app --reload
-Open your browser and navigate to:
-http://127.0.0.1:8000
+---
 
-2. Core Concept
-Most AI systems require users to learn prompt engineering to achieve good results.
-PromptPilot AI removes this requirement entirely.
-Users interact using natural human language.
-PromptPilot internally:
-Interprets user intent
-Constructs professional AI execution prompts
-Maintains conversational context
-Executes AI reliably and consistently
-The professional prompt exists only inside the system, not in the user interface.
+## 🛠️ Installation & Setup
+
+### Prerequisites
+* Python 3.10 or higher
+* A Google Cloud API Key (for Gemini)
+* An ElevenLabs API Key (for Voice)
+
+### 1. Clone the Repository
+``bash
+**git clone [https://github.com/AYYAPPANAYYANAN/promptpilot-ai.git](https://github.com/AYYAPPANAYYANAN/promptpilot-ai.git)
+cd promptpilot-ai**
 
 
-3. Key Advancements
-This section lists all major advancements implemented from the initial idea to the final system.
+### 2. Install Dependencies
+### pip install fastapi uvicorn google-generativeai elevenlabs diffusers torch accelerate pypdf python-docx
 
-3.1 Promptless Interaction Layer
-Casual human input is transformed into structured AI instructions
-Prompt engineering is handled entirely by the system
-Users never need to understand or write prompts
+### 3. Set API Keys
+*** You must set your API keys inside the promptpilot_ai.py file or export them as environment variables.
+GOOGLE_API_KEY = "your_actual_google_key_here"
+ELEVENLABS_API_KEY = "your_actual_elevenlabs_key_here"
 
-3.2 Conversational Intelligence
-Two-way conversation between user and AI
-Multi-turn memory per session
-Context-aware responses
-Chat-style interaction familiar to global users
+### 🚀 How to Run
+*** python promptpilot_ai.py ***
+Once the server starts, open your browser and navigate to:
+👉 http://127.0.0.1:8000
 
-3.3 Multilingual Intelligence
-Automatic language detection (80+ languages)
-No manual language selection required
-Default fallback to English when detection confidence is low
-Language consistency across text and voice output
-
-3.4 Voice Output
-High-quality speech synthesis using ElevenLabs
-Language-aware voice responses
-Supports hands-free and accessibility use cases
-Voice treated as a first-class output modality
-
-3.5 Image Generation (Diffusers-Ready)
-Integration with local, open-source diffusion models
-Unlimited image generation (limited only by hardware)
-CPU-safe execution with automatic GPU acceleration if available
-PromptPilot internally generates optimized image prompts
-
-3.6 Document Intelligence
-Supports PDF and DOC/DOCX uploads
-Automatic text extraction
-Documents treated as human intent
-AI can summarize, explain, or analyze documents conversationally
-
-3.7 User Context Awareness
-Optional onboarding information:
-First name
-Age group (range-based, not exact age)
-Role (student, working professional, other)
-AI adapts explanation depth and tone accordingly
-No sensitive personal data collected
-
-3.8 Prompt Transparency (Optional)
-Advanced users can view internally generated prompts
-Prompts can be edited and re-executed
-Default experience remains fully promptless
-
-3.9 Personalization and Settings
-Adjustable font size
-Font style selection
-Text color themes
-Preferences stored locally in the browser
-
-3.10 Responsive and Cross-Platform Design
-Mobile-first user interface
-Tablet, laptop, and desktop support
-Modern blue-black aesthetic
-Fast startup and low operational overhead
-Single-file Python architecture
-
-4. Architecture Overview
-
-Human Input (Text / Voice / Document / Image Intent)
-               ↓
-      PromptPilot Interpretation Layer
-               ↓
-      Structured AI Execution
-               ↓
-     Text / Voice / Image Output
-
-##     PromptPilot functions as an AI orchestration and interpretation layer rather than a traditional chatbot.
-
-5. Security and Responsible AI
-No API keys stored in source code
-Secrets managed via environment variables
-No training or fine-tuning on user data
-No biometric or sensitive personal information collected
-Session data is temporary and resettable
-
+### ***⚠️ SECURITY WARNING:** For security reasons, the API keys in this repository have been removed/redacted. You must use your own keys to run the application. Never commit your `promptpilot_ai.py` file to GitHub if it contains your real keys! ***
